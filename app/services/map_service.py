@@ -3,11 +3,7 @@
 import folium
 from app.models.location import Location
 
-locations = [
-    Location("Bệnh viện A", 10.032, 105.729),
-    Location("Bệnh viện B", 10.042, 105.735),
-    Location("Bệnh viện C", 10.052, 105.745)
-]
+
 
 def get_map():
     map_center = [10.032, 105.729]

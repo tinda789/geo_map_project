@@ -12,22 +12,12 @@ def index():
     m = folium.Map(location=[10.0452, 105.7469], zoom_start=12)
 
     # Thêm tính năng vẽ bản đồ
-    draw = plugins.Draw(
-        export=True,  # Cho phép xuất GeoJSON
-        position="topleft",  # Đặt công cụ vẽ ở trên cùng bên trái
-        draw_options={
-            'polyline': {'shapeOptions': {'color': 'red'}},  # Vẽ đường màu đỏ
-            'polygon': {'shapeOptions': {'color': 'blue'}},  # Vẽ đa giác màu xanh
-            'circle': {'shapeOptions': {'color': 'green'}},  # Vẽ hình tròn màu xanh lá
-            'marker': {},  # Vẽ marker
-        }
-    )
-    draw.add_to(m)
+   
 
     # Lưu bản đồ vào file HTML
-    m.save('app/templates/map.html')
+    m.save('app/templates/index.html')
 
-    return render_template('map.html')
+    return render_template('index.html')
 
 @map_blueprint.route('/get_geojson', methods=['POST'])
 def get_geojson():
